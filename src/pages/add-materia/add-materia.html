@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="formM">
+    <ion-item>
+      <ion-label stacked>Nome:</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formM.controls.nome.valid && (formM.controls.nome.dirty || formM.controls.nome.touched)" color="danger">
+      <div [hidden]="!formM.controls.nome.errors.required">
+        O Campo é Obrigatório!
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Sigla:</ion-label>
+      <ion-input type="text" formControlName="sigla"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formM.controls.sigla.valid && (formM.controls.sigla.dirty || formM.controls.sigla.touched)" color="danger">
+      <div [hidden]="!formM.controls.sigla.errors.required">
+        O Campo é Obrigatório!
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Qntd de Aulas:</ion-label>
+      <ion-input type="tel" formControlName="qntdAulas"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Qntd de faltas:</ion-label>
+      <ion-input type="tel" formControlName="qntdFaltas"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nota P1:</ion-label>
+      <ion-input type="tel" formControlName="notaP1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nota P2:</ion-label>
+      <ion-input type="tel" formControlName="notaP2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Bibliografia:</ion-label>
+      <ion-input type="text" formControlName="bibliografia"></ion-input>
+    </ion-item>
+
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!formM.valid" (click)="onSubmitM()">Salvar</button>
+    </div>
+  </form>
+
+</ion-content>

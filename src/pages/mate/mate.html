@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Matérias</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let materia of materias | async">
+      <ion-item>
+        <h1>{{ materia.nome }}</h1>
+        <p>{{ materia.sigla }}</p>
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button color="secondary" (click)="editMateria(materia)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="removeMateria(materia.key)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button navPush="AddMateriaPage" ion-fab color="primary">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="formP">
+    <ion-item>
+      <ion-label stacked>Nome:</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formP.controls.nome.valid && (formP.controls.nome.dirty || formP.controls.nome.touched)" color="danger">
+      <div [hidden]="!formP.controls.nome.errors.required">
+        O Campo é Obrigatório!
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>E-Mail:</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formP.controls.email.valid && (formP.controls.email.dirty || formP.controls.email.touched)" color="danger">
+      <div [hidden]="!formP.controls.email.errors.required">
+        O Campo é Obrigatório!
+      </div>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Matéria: </ion-label>
+        <ion-select okText="Ok" cancelText="Cancelar">
+          <ion-option *ngFor="let materia of materias | async" [value]="materia">{{ materia.sigla }}</ion-option>
+          </ion-select>
+      </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Telefone:</ion-label>
+      <ion-input type="tel" formControlName="telefone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Horario Disponivel:</ion-label>
+      <ion-input type="text" formControlName="horarioDisp"></ion-input>
+    </ion-item>
+
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!formP.valid" (click)="onSubmitP()">Salvar</button>
+    </div>
+  </form>
+
+</ion-content>
