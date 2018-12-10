@@ -3,14 +3,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ viewTitle }}</ion-title>
+    <ion-title>Calendário Escolar</ion-title>
     <ion-buttons end>
     </ion-buttons>    
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <h3>Calendário Escolar</h3>
+  <h3>{{ viewTitle }}</h3>
 
   <calendar [eventSource]="eventSource"
   [calendarMode]="calendar.mode"
@@ -23,9 +23,8 @@
   </calendar>
  
   <ion-fab bottom right>
-    <button navPush="AddProfessorPage" ion-fab color="primary" (click)="addEvent()">
+    <button ion-fab color="primary" (click)="addEvent()">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>
-
 </ion-content>

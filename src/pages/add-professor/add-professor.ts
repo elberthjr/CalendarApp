@@ -35,7 +35,7 @@ export class AddProfessorPage {
       key: [this.professor.key],
       nome: [this.professor.nome, Validators.required],
       email: [this.professor.email, Validators.required],
-      materia: [this.professor.materia = this.materia],
+      materia: [this.professor.materia],
       telefone: [this.professor.telefone],
       horarioDisp: [this.professor.horarioDisp],
     });

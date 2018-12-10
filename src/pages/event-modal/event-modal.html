@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>{{ title }}</ion-title>
+    <ion-title>Detalhes do Evento</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,50 +9,30 @@
 
 <ion-content>
 
-  <form [formGroup]="formE">
+    <ion-list>
       <ion-item>
-          <ion-label stacked>Titulo: </ion-label>
-          <ion-input type="text" formControlName="title"></ion-input>
-        </ion-item>
-        <ion-item *ngIf="!formE.controls.title.valid && (formE.controls.title.dirty || formE.controls.title.touched)" color="danger">
-          <div [hidden]="!formE.controls.title.errors.required">
-            O Campo é Obrigatório!
-          </div>
-        </ion-item>
-
-    <ion-item>
-      <ion-label>Inicio</ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" formControlName="startTime"></ion-datetime>
-    </ion-item>
-    <ion-item *ngIf="!formE.controls.startTime.valid && (formE.controls.startTime.dirty || formP.controls.startTime.touched)" color="danger">
-        <div [hidden]="!formE.controls.startTime.errors.required">
-          O Campo é Obrigatório!
-        </div>
+        <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
       </ion-item>
 
-    <ion-item>
-      <ion-label>Fim</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" formControlName="endTime"></ion-datetime>
-    </ion-item>
-    <ion-item *ngIf="!formE.controls.endTime.valid && (formE.controls.endTime.dirty || formE.controls.endTime.touched)" color="danger">
-        <div [hidden]="!formE.controls.endTime.errors.required">
-          O Campo é Obrigatório!
-        </div>
+      <ion-item>
+        <ion-label>Inicio:</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" [(ngModel)]="event.startTime"></ion-datetime>
       </ion-item>
 
-    <ion-item>
-      <ion-label>Dia todo?</ion-label>
-        <ion-checkbox formControlName="allDay"></ion-checkbox>
-    </ion-item>
+      <ion-item>
+        <ion-label>Fim: </ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" [(ngModel)]="event.endTime"></ion-datetime>
+      </ion-item>
 
+      <ion-item>
+        <ion-label>Dia Inteiro </ion-label>
+        <ion-checkbox [(ngModel)]="event.AllDay"></ion-checkbox>
+      </ion-item>
 
-  <button ion-button icon-left (click)="goHome()">
-    <ion-icon name="md-arrow-back"></ion-icon> Cancelar
-  </button>
+    </ion-list>
 
-  <button ion-button icon-left (click)="onSubmitE()">
-      <ion-icon name="md-add"></ion-icon> Add Evento
-  </button>
-
-</form>
+    <button ion-button full icon-left (click)="save()">
+        <ion-icon name="md-add"></ion-icon> Add Evento
+    </button>
+  
 </ion-content>
