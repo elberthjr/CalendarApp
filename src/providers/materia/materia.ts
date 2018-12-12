@@ -22,9 +22,12 @@ export class MateriaProvider {
     return this.db.object(this.PATH + key)
     .snapshotChanges()
     .map(c => {
-      return { key: c.key, 
-      ...c.payload.val() };
+      return { key: c.key, ...c.payload.val() };
     })
+  }
+
+  getSigla(){
+    return this.db.object(this.PATH.charAt(1));
   }
 
   saveM(materia: any){

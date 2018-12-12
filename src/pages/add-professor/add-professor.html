@@ -33,7 +33,7 @@
         <ion-label stacked>Matéria: </ion-label>
         <ion-select okText="Ok" cancelText="Cancelar">
           <ion-option *ngFor="let materia of materias | async" [value]="materia">{{ materia.sigla }}</ion-option>
-          </ion-select>
+        </ion-select>
       </ion-item>
 
     <ion-item>

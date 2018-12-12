@@ -39,9 +39,11 @@ export class AddProfessorPage {
       telefone: [this.professor.telefone],
       horarioDisp: [this.professor.horarioDisp],
     });
+    
   }
 
   onSubmitP(){
+    console.log('e ' + this.professor.materia);
     if (this.formP.valid) {
       this.provider.saveP(this.formP.value)
       .then(() => {

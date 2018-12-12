@@ -16,12 +16,12 @@
 
       <ion-item>
         <ion-label>Inicio:</ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" [(ngModel)]="event.startTime"></ion-datetime>
+        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
       </ion-item>
 
       <ion-item>
         <ion-label>Fim: </ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" [(ngModel)]="event.endTime"></ion-datetime>
+        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
       </ion-item>
 
       <ion-item>
@@ -34,5 +34,5 @@
     <button ion-button full icon-left (click)="save()">
         <ion-icon name="md-add"></ion-icon> Add Evento
     </button>
-  
+    
 </ion-content>

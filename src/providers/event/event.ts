@@ -5,8 +5,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class EventProvider {
 
     private PATH = 'eventos/';
-
-    constructor(private db: AngularFireDatabase){ }
+        constructor(private db: AngularFireDatabase){ }
 
     getAllE(){
         return this.db.list(this.PATH)

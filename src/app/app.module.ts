@@ -16,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { NgCalendarModule } from 'ionic2-calendar';
 import { MateriaProvider } from '../providers/materia/materia';
 import { ProfessorProvider } from '../providers/professor/professor';
+import { EventProvider } from '../providers/event/event';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ProfessorProvider } from '../providers/professor/professor';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MateriaProvider,
-    ProfessorProvider
+    ProfessorProvider,
+    EventProvider
   ]
 })
 export class AppModule {}
