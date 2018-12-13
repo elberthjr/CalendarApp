@@ -30,16 +30,14 @@ export class EventProvider {
         return new Promise((resolve, reject) => {
             if (event.key) {
                 this.db.list(this.PATH)
-                .update(event.key, { title: event.title,
-                                     startTime: event.startTime,
+                .update(event.key, { startTime: event.startTime,
                                      endTime: event.endTime,
                                      allDay: event.allDay })
                 .then(() => resolve())
                 .catch((e) => reject(e));
             } else {
                 this.db.list(this.PATH)
-                .push({ title: event.title,
-                        startTime: event.startTime,
+                .push({ startTime: event.startTime,
                         endTime: event.endTime,
                         allDay: event.allDay })
                 .then(() => resolve());

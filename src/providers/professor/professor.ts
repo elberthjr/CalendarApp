@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { MateriaProvider } from '../../providers/materia/materia';
 
 
 
@@ -9,7 +10,7 @@ export class ProfessorProvider {
   
   private PATH = 'professor/';
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase, private materia: MateriaProvider) { }
 
   getAllP() {
     return this.db.list(this.PATH, ref => ref.orderByChild('nome'))
@@ -53,8 +54,8 @@ export class ProfessorProvider {
             horarioDisp: professor.horarioDisp
           })
           .then(() => resolve());
-          console.log('pts' + professor.materia)
       }
+      console.log('pts' + professor.materia)
     });
   }
 

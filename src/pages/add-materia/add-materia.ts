@@ -40,7 +40,6 @@ export class AddMateriaPage {
   }
 
   onSubmitM(){
-    console.log('e ' + this.materia.sigla);
     if (this.formM.valid) {
       this.provider.saveM(this.formM.value)
       .then(() => {

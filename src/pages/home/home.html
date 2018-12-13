@@ -12,7 +12,8 @@
 <ion-content>
   <h3>{{ viewTitle }}</h3>
 
-  <calendar [eventSource]="eventSource"
+
+  <calendar [eventSource]="eventSource" 
   [calendarMode]="calendar.mode"
   [currentDate]="calendar.currentDate"
   (onEventSelected)="onEventSelected($event)"

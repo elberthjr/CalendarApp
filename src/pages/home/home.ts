@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController, AlertController } from 'ionic-angular';
-import * as moment from 'moment'
+import * as moment from 'moment';
 
 @Component({
   selector: 'page-home',
@@ -13,9 +13,11 @@ export class HomePage {
   
   calendar = {
     mode: 'month',
-    currentDate: this.selectedDay
-  }
-  constructor(public navCtrl: NavController, private modalCtrl: ModalController, private alertCtrl: AlertController ) {
+    currentDate: new Date()
+  };
+  
+  constructor(public navCtrl: NavController, private modalCtrl: ModalController, 
+    private alertCtrl: AlertController) {
 
   }
 
@@ -54,10 +56,11 @@ export class HomePage {
 
     let alert = this.alertCtrl.create({
       title: '' + event.title,
-      subTitle: 'From: ' + start + '<br>To: ' + end,
+      subTitle: 'De: ' + start + '<br>Ate: ' + end,
       buttons: ['OK']
     });
     alert.present();
   }
 
 }
+

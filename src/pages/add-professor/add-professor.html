@@ -29,12 +29,14 @@
       </div>
     </ion-item>
 
+    
+   
     <ion-item>
         <ion-label stacked>Matéria: </ion-label>
-        <ion-select okText="Ok" cancelText="Cancelar">
-          <ion-option *ngFor="let materia of materias | async" [value]="materia">{{ materia.sigla }}</ion-option>
+        <ion-select placeholder="{{materia.sigla}}" okText="Ok" cancelText="Cancelar" formControlName="materia">
+          <ion-option *ngFor="let materia of materias | async" [value]="materia.sigla">{{ materia.sigla }}</ion-option>
         </ion-select>
-      </ion-item>
+    </ion-item>
 
     <ion-item>
       <ion-label stacked>Telefone:</ion-label>

@@ -26,10 +26,6 @@ export class MateriaProvider {
     })
   }
 
-  getSigla(){
-    return this.db.object(this.PATH.charAt(1));
-  }
-
   saveM(materia: any){
     return new Promise((resolve, reject) => {
       if (materia.key) {
